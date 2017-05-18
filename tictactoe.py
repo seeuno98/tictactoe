@@ -68,7 +68,7 @@ def player_choice(board):
     pos = ' '
     while (pos not in '1 2 3 4 5 6 7 8 9'.split() or
            not check_space(board, int(pos) - 1)):
-        pos = raw_input('Enter your next position: (1-9)')   
+        pos = raw_input('Enter your next position (1-9): ')   
 
     
     print("you chose position: "+ pos)        
@@ -88,7 +88,7 @@ def play_tictactoe():
     #create the board
     score = [0,0,0]
     while True:
-        board = [' ']*10
+        board = [' ']*9
         player1, player2 = player_input()
         player = who_first()
         print (player + ' will play first!')
@@ -132,7 +132,7 @@ def play_tictactoe():
                     else:
                         player = 'Player1'  
                         
-        print(board)
+        
         x = score[0]
         y = score[1]
         z = score[2]

@@ -87,6 +87,7 @@ def replay():
 
 print("Welcome to Tic Tac Toe!")
 
+#show_result shows a graphical summary of given result (input = n * 3 matrix, n = 1, 2, 3, ...)
 def show_result(result):
     count = len(result)
     df_player1 = []
@@ -108,7 +109,7 @@ def show_result(result):
     plt.show()
         
     
-#while True:
+
 def play_tictactoe():
     #create the board
     score = [0,0,0]
@@ -116,13 +117,14 @@ def play_tictactoe():
     player1, player2 = player_input()
     
     while True:
-        #board = [' ']*9
+        #Set up before beginnig of each game play
         board = ['1','2','3','4','5','6','7','8','9']
         player = who_first()
         print (player + ' will play first!')
         game = True
         scorehist = default_score
         
+        #beginning of the game play
         while game:
             # when Player 1 plays
             if player == 'Player1':                
@@ -162,7 +164,7 @@ def play_tictactoe():
                     else:
                         player = 'Player1'  
                         
-        
+        #Show current score
         x = score[0]
         y = score[1]
         z = score[2]
@@ -171,10 +173,8 @@ def play_tictactoe():
         print(result)
         result = [x,y,z]
         scorehist.append(result)
-        #score = scorehist
-        #print(score)
-        print(scorehist)
         
+        #If players want to stop replaying, then show result
         if not replay():
             show_result(scorehist)
             break
